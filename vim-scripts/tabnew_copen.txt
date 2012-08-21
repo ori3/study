@@ -1,0 +1,4 @@
+abnew .
+copen
+cexpr system('find /tmp')
+
