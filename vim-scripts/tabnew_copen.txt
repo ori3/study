@@ -1,4 +1,5 @@
-tabnew .
+"tabnew .
+tabnew
 copen
 cexpr system('find /tmp')
 
