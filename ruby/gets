@@ -1,0 +1,10 @@
+name = gets
+print "Hello, #{name}\n"
+printf "hello, %s\n", name
+message = "hello, %s" % name
+puts message
+$stderr.puts message
+$stdout.puts message
+puts $stdout.class
+
+
