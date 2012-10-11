@@ -49,10 +49,10 @@ set hlsearch
 colorscheme desert
 
 filetype plugin indent on
-source /usr/share/vim/vim72/syntax/php.vim
-source /Users/oriori/.vim/scala-tool-support/vim/syntax/scala.vim
+"source /usr/share/vim/vim72/syntax/php.vim
+"source /Users/oriori/.vim/scala-tool-support/vim/syntax/scala.vim
 "source /Users/oriori/.vim/cocoa.vim
-source /Users/oriori/.vim/plugin/cocoa.vim
+"source /Users/oriori/.vim/plugin/cocoa.vim
 
 " beep音を消します
 set visualbell
@@ -75,3 +75,35 @@ map <C-i> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
 nmap <F3> :GtagsCursor<CR>
 map <F4> :wincmd gF<CR>
+
+
+set nocompatible
+filetype off                   " (1)
+
+set rtp+=~/.vim/vundle.git/    " (2)
+call vundle#rc()               " (3)
+
+" original repos on github
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'scrooloose/nerdtree'
+"
+" " vim-scripts repos
+" Bundle 'rails.vim'
+"
+" " non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+"
+ filetype plugin indent on     " (5)
+
+let g:neocomplcache_enable_at_startup = 1
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+"autocmd vimenter * NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
