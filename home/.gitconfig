@@ -4,6 +4,7 @@
 [core]
 	editor = /usr/bin/vim
 [alias]
+  b  = branch1
   st = status
   ci = commit
   co = checkout
