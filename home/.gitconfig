@@ -1,0 +1,9 @@
+[user]
+	name = ori3
+	email = orisan3@gmail.com
+[core]
+	editor = /usr/bin/vim
+[alias]
+  st = status
+  ci = commit
+  co = checkout
