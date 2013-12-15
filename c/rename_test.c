@@ -15,11 +15,14 @@ main(int argc, char *argv[])
     }
 
 
-    int fd = open(argv[1], O_RDONLY);
+    int fd = open(argv[1], O_APPEND);
     if (rename(argv[1], argv[2]) < 0) {
         perror(argv[1]);
         exit(1);
     }
+    char a[4] = "ABC";
+    write(fd, a, sizeof a);
+    printf("write: %s",a);
     close(fd);
     exit(0);
 }
