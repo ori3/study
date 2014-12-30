@@ -1,6 +1,8 @@
 Taskapp::Application.routes.draw do
 
-  resources :projects
+  resources :projects do
+      resources :tasks, only: [:create, :destroy]
+  end
   resources :hoges
 
   root 'projects#index'
