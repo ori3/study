@@ -4,6 +4,7 @@ Taskapp::Application.routes.draw do
       resources :tasks, only: [:create, :destroy]
   end
   resources :hoges
+  post '/projects/:product_id/tasks/:id/toggle' => 'tasks#toggle'
 
   root 'projects#index'
 
